@@ -20,7 +20,7 @@ public static void main(String[] args) throws Exception {
     {
         a2[i]=sc.nextInt();
     }
-    
+    sc.close();
     HashMap<Integer,Integer> hm = new HashMap<>();
     
     for(int i=0;i<n1;i++)
