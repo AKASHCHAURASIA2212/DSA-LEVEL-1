@@ -147,10 +147,13 @@ public class Main {
         }
 
         Display(root);
+        System.out.println("preorder treversal -->");
         preorder(root);
         System.out.println();
+        System.out.println("inorder treversal -->");
         inorder(root);
         System.out.println();
+        System.out.println("postorder treversal -->");
         postorder(root);
     }
 }
