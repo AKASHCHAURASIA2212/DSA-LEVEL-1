@@ -39,7 +39,7 @@ public class Main {
             }
             else if(j==m-1)
             {
-                // last row
+                // last column
                 dp[i][j]=dp[i+1][j]+arr[i][j];
             }
             else{
