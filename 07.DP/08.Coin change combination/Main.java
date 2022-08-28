@@ -3,6 +3,24 @@ import java.util.*;
 
 public class Main {
 
+   public static int coinChangeCombination(int[] arr ,int amt){
+        int[] dp = new int[amt+1];
+        dp[0]=1;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            int val = arr[i];
+            
+            for(int j=val;j<dp.length;j++)
+            {
+                dp[j]=dp[j-val] +dp[j];
+            }
+        }
+        
+        return dp[amt];
+    }
+
+    
 public static int CCC(int[] arr,int dp[])
 {
     dp[0]=1;

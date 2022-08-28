@@ -2,8 +2,24 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-
-    public static int CCC(int[] arr,int dp[])
+    public static int coinChangePermutation(int[] arr ,int amt){
+        int[] dp = new int[amt+1];
+        dp[0]=1;
+        
+        for(int i=1;i<dp.length;i++)
+        {
+            for(int j=0;j<arr.length;j++)
+            {
+                if(i-arr[j]>=0)
+                {
+                    dp[i] += dp[i-arr[j]] ;
+                }
+            }
+        }
+        
+        return dp[amt];
+    }
+    public static int CCP(int[] arr,int dp[])
 {
     dp[0]=1;
     int n=dp.length;
@@ -34,7 +50,7 @@ public class Main {
             }
             int amt = s.nextInt();
             int []dp = new int[amt+1];
-            int ans = CCC(arr,dp);
+            int ans = CCP(arr,dp);
             System.out.println(ans);
     }
 }
